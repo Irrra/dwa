@@ -1,0 +1,228 @@
+/* main styles for the Shmitter application */
+/* Author Irina Danilova */
+
+/***** RESET *****/
+
+body, head, footer, p, h1, h2, ul, li , a {
+	margin: 0;
+	padding: 0;
+}
+
+/***** GENERAL STYLING *****/
+head, footer, aside, article, section {
+	display: block;
+}
+
+body {
+	background-color: #0367A6;
+	color: #000;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+
+/***** HOME PAGE SPECIFIC STYLING *****/
+#indexcontent h1 {
+	color: #B45400;
+	font-family: 'Eater', cursive;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+}
+
+
+#indexcontent p {
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+/***** HEADERS *****/
+h1 {
+	color: #B45400;
+	font-family: 'Times New Roman', serif;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+h2  {
+	color: #fff;
+	font-family: 'Times New Roman', serif;
+	font-size: 1.1em;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+/***** CONTENT STYLING *****/
+#mainContent {
+	background-color: #fff;
+	color: #000;
+	margin: 0 auto;
+	padding-bottom: 15px;
+	width: 902px;
+}
+
+#logo {
+	background: #fff url('../images/shmitterlogo.jpg') no-repeat left top;
+	height: 205px;
+}
+
+#logo p {
+	margin-left: -1000px;
+}
+
+
+article {
+ margin: 15px 15px;
+}
+
+article#homeArticle {
+	text-align: center;
+}
+
+p , ul{
+	font-size: 0.8em;
+}
+
+p{
+	margin: 15px 10px;
+}
+
+/***** MENU *****/
+nav {
+	background-color: #00344C;
+	padding: 5px;
+}
+
+nav a {
+	color: #fff;
+	font-size: 1.1em;
+	display: inline;
+	margin-right: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+ul li {
+	background-image: url(../images/pumpkin.png);
+	background-position: -2px center;
+	background-repeat: no-repeat;
+	list-style: none;
+	margin: 15px;
+	padding-left: 25px;
+	padding-top: 5px;
+}
+
+#shmitterians{
+	clear: both;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+
+
+#shmitterians li {
+	background-image: url(../images/pumpkin.png);
+	background-position: 0 20px;
+	background-repeat: no-repeat;
+	border: 1px dashed #BF8C33;
+	float: left;
+	line-height: 1.7em;
+	list-style: none;
+	margin: 15px 15px 15px 5px;
+	padding: 25px;
+}
+
+#shmitterians li a:link, #shmitterians li a:hover, 
+#shmitterians li a:visited, #shmitterians li a:active {
+	background-color: #592507;
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
+
+}
+
+a
+
+/***** FORMS *****/
+form {
+	margin-left: 10px;
+}
+.forminput, input[type="submit"]{
+	margin: 10px;
+}
+
+textarea {
+	height: 250px;
+	margin: 5px;
+	width: 500px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 250px;
+}
+
+input[type="text"], textarea {
+	font-size: 1em;
+}
+
+.error {
+	color: #f00;
+	margin-left: 10px;
+}
+
+/***** POSTS *****/
+.shmitter {
+	background-color: #592507;
+	border: 1px dashed #BF8C33;
+	font-family: cursive;
+	margin: 20px auto;
+	padding: 10px;
+	width: 800px;
+	
+   -moz-border-radius: 15px;
+   -o-border-radius: 15px;
+   -ms-border-radius: 15px;
+	border-radius: 15px;
+
+}
+
+#randompost .shmitter {
+	width: 400px;
+}
+
+#author {
+	color: #BF8C33;
+	font-size: 1em;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+#post {
+	color: #fff;
+	font-family: cursive;
+	font-size: 0.9em;
+	line-height: 1.2 em;
+	text-align: justify;
+}
+
+/***** Profile Page Divs *****/
+#profileContainer {
+	border: dashed 2px #04ADBF;
+	margin: 10px auto;
+	overflow: hidden;
+	position: relative;
+	width: 870px;
+}
+
+#userinfo {
+	float: left; 
+	width: 350px;
+}
+
+#randompost {
+	float: left; 
+	padding-left: 25px;
+}
+
+

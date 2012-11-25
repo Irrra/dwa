@@ -1,0 +1,298 @@
+/*
+
+Main screen styles for idealcapture.com.
+Author: Irina Danilova
+Last Modified: 08/07/2012
+
+*/
+
+
+/* ========== RESET =============*/
+
+body, h1, h2, p, ol, ul, li, nav, header, footer. section, aside, article, form {
+	border: 0;
+	font-size: 100%;
+ 	font-weight: normal;
+	margin: 0;
+	padding: 0; 
+}
+
+
+/* ========== GLOBAL STYLES =============*/
+
+body {
+	background-color: #FFF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 100%;
+	width:    100%;
+}
+
+
+#mainContent {
+	
+	background-color: #FFF;
+	border: solid 1px #999;
+	margin: 20px auto; 
+	padding-top:  20px;
+	padding-bottom:20px;
+	width: 850px;		                            
+} 
+
+iframe {
+	clear: both;
+
+}
+
+/* ========== NAVIGATION =============*/
+
+
+nav {
+	background-image: url("images/bottom_menu_2.gif");
+	background-repeat: no-repeat;
+	clear: both;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	height: 121px;
+	margin: 0 auto; 
+	padding: 10px;
+	position: relative;
+	width: 751px;
+}
+
+nav a {
+	font-size: 16px;
+}
+
+
+
+#infolink, #weddinglink, #portraitslink, #naturelink, #misclink, #contactlink {
+	position: absolute;
+	top: 30px;
+}
+
+#infolink {
+	left: 88px;
+}
+
+#weddinglink {
+	left: 155px;
+}
+
+#portraitslink {
+	left: 370px;
+}
+
+
+#naturelink {
+	left: 475px;
+}
+
+#misclink {
+	left: 560px;
+}
+
+#contactlink {
+	left: 630px;
+}
+                
+
+/* ========== CUSTOMER REVIEWS =============*/
+
+#reviews {
+	background-color: #FC9;
+	
+	clear: both;
+	color: #666;    
+	font-family: Verdana, Geneva, sans-serif;                                  
+	margin: 15px auto; 
+	padding-bottom: 15px;
+	width: 750px;                          
+	
+	/* border radius and shadow */
+	
+	border: solid 1px #222;
+	border-top-width: 2px;
+	border-left-width: 2px;
+	
+	-webkit-border-radius: 20px 10px;
+	-moz-border-radius: 20px 10px;
+	-o-border-radius: 20px 10px;
+	-ms-border-radius: 20px / 10px;
+	border-radius: 20px 10px;
+	
+	-webkit-box-shadow: rgba(0,0,0,0.7) 5px 5px;
+	-moz-box-shadow: rgba(0,0,0,0.7) 5px 5px;
+	-o-box-shadow: rgba(0,0,0,0.7) 5px 5px;
+	-ms-box-shadow: rgba(0,0,0,0.7) 5px 5px;
+}
+
+.review
+{
+
+	font-size : 0.8em;
+	font-style : normal;    
+	line-height: 1.8em;
+}
+
+p.review:first-letter {
+	color: #630;
+	float: left;
+	font-family: cursive;
+	font-size: 3em; 
+	padding: 10px 5px 5px 5px;  
+}
+
+.reviewer {
+	color: #FFF;
+	font-size : 0.8em;
+	font-style:italic;
+	margin-left: 55px;
+	margin-top: -10px;
+	
+}                                                             
+ 
+/* ========== TYPOGRAPHY =============*/
+
+h1  {
+	color: #82634B;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style : bold;
+	font-size : 1.2em;
+	margin-bottom: 1.5em;
+}
+
+p {
+	color : #000;
+	font-style : normal;    
+	font-size : 1em;
+	line-height: 1.6em;
+	margin: 15px 25px;
+}
+ 
+/* ========== LINKS =============*/
+      
+a:link, a:visited {
+	color: #666;
+	text-decoration: none;
+}
+
+ a:hover {
+	border-bottom: dashed 1px #666;
+ }
+ 
+ a:active {
+	 color: #999;
+ }
+ 
+
+.fancyList li {
+	
+	background-image: url(mygallery/galleries/template/camera.png);
+	background-position: 0 2px;
+	background-repeat: no-repeat;
+	list-style: none;
+	margin: 5px 0 10px 200px; 
+	padding-left: 20px;
+}
+
+/* ========== IMAGES =============*/
+
+
+img {
+	margin-bottom: 10px;
+	margin-left: 25px;
+}
+
+img.floatLeft {
+	float: left;
+	margin-top: 0px;
+	margin-right: 25px;
+	margin-bottom: 75px;
+}
+
+img.footer {
+	bottom: 500px;
+	position: absolute;
+}
+
+#favIcons img {
+	border: 0;
+	margin-left: 0px;
+	padding-right: 15px;
+}
+
+#favIcons a:hover {
+	border: 0;
+}
+
+/* ========== FORM =============*/
+
+form {
+	margin: 15px;
+	padding: 0;
+	width: 800px;
+}
+
+
+hgroup {
+	margin-bottom: 2em;
+}
+
+h1 {
+	color: #82634B;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style : bold;
+	font-size : 1.2em;
+}
+
+p, input, label, placeholder {
+	font-size: 0.9em;	
+}
+
+input, optgroup{
+	margin-top: 10px;
+	width: 450px;
+}
+
+input:focus {
+	color: #999;
+}
+
+input[type="submit"], input[type="reset"] {
+	float: left;
+	margin-left: 20px;
+	width: auto;
+}
+
+fieldset {
+	background-color: #FC9;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border: 10px;
+	width: 750px;
+	margin-bottom: 10px;
+}
+
+fieldset fieldset {
+	width: 700px;
+}
+
+legend {
+	background-color: #82634B;
+	border: 1px solid #222;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border: 3px;
+	color: #FFF;
+	font-style: italic;
+	padding: 5px;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	margin: 15px;
+}
+
+checkbox, radio {
+	display: inline;
+}

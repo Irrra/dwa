@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="main.css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico">
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+<![endif]-->
+<meta charset="utf-8" />
+<meta name="keywords" content="photography, Boston, wedding photography, portraits, idealcapture, contact, Danilova" />
+
+<title>IDealCapture. Quick Quote.</title>
+
+</head>
+
+<body>
+<div id="mainContent">
+
+<img src="images/boy.gif" alt="irina" width="162" height="183" border="0" class="floatLeft" />
+<h1>Quick Quote tool</h1>
+
+
+<p>Dear prospective <a href="http://www.idealcapture.com">Idealcapture</a> customer, </p>
+<p>Please, fill a form below in order to get an approximate quotation for your shooting event. Make sure you entered all the information required in order to get accurate results.</p>
+<p>There are some simple rules that apply to the arithmetic used in calculations. Keep them in mind when planning your event's budget:</p>
+<ul class="fancyList">
+  <li>
+    <p>Shooting costs $120/hour for first 4 hours for an adult or kid portrait and $150/hour for a whole family. The price includes: unlimited number of images taken and 25 hi-res carefully re-touched files sent to you in a digital format (50 files if you book 2 hours etc.). Bonus - 25-30 low res color-corrected images.</p>
+  </li>
+  <li>
+    <p>Shooting costs $120/hour for Love Story or Ceremony only and $150/hour for both. The price includes: unlimited number of images taken and 25 hi-res carefully re-touched files sent to you in a digital format (50 files if you book 2 hours etc.). Bonus - 25-30 low res color-corrected images.</p>
+  </li>
+  <li>
+    <p>Shooting costs $125/hour for Birthdays, Parties and other events. The price includes: unlimited number of images taken and 25 hi-res carefully re-touched files sent to you in a digital format (50 files if you book 2 hours etc.). Bonus - 25-30 low res color-corrected images.</p>
+  </li>
+  <li>
+    <p>If your shoot is longer than 4 hours, it will be $100/additional hour. Bonus - 40-50 low res color-corrected images.</p></li>
+  <li>
+    <p>Every extra hi-res image costs $5, every extra low-res image costs $2.5.</p></li>
+  <li>
+    <p>The earlier you booked, the better. A month in advance booking gives you 5% off, two month in advance - 7% off.</p></li>
+</ul>
+
+   
+
+
+<form action="js/quickquote.js" method="POST" autocomplete="on">
+<fieldset>
+<legend>Your Personal Information</legend>
+<label for="custname">Name: <br><input type="text" name="custname" id="custname" size="30" required autofocus="autofocus"></label>
+<label for="custphone">Phone: <br><input type="tel" name="custphone" id ="custphone" size="30" required></label>
+<label for="custmail">E-mail: <br><input type="email" name="custmail" id="custmail" size="30" required></label>
+</fieldset>
+
+
+<fieldset>
+<legend>Type of Shooting</legend>
+<label for="eventtype">Type of event (select all that apply): <br>
+  <select name="eventtype" id="eventtype" multiple>
+   <optgroup label="Family Portraits">
+		<option value="individual" selected>Adult Portraits</option>
+	    <option value="kids">Kids Portraits</option>
+		<option value="family">Family/Friends Portraits</option>
+	</optgroup>
+
+
+   <optgroup label="Wedding">
+		<option value="ceremony">Ceremony</option>
+		<option value="lovestory">Love Story</option>
+		<option value="bothparts">Both ceremony and love story</option>
+	</optgroup>
+  
+  <optgroup label="Celebrations">
+		<option value="mitzvahs">Bar and Bat Mitzvah</option>
+		<option value="birthdays">Birthdays and other events</option>
+	</optgroup>
+  </select>
+  </label>
+</fieldset>
+
+	
+<fieldset>
+<legend>Length of Shooting</legend>
+<label>Shooting date: <br><input type="datetime" name="eventdate" placeholder="pick a date or enter in a MM/DD/YEAR format"></label>
+<label>Shooting length: <br><input type="number" min="1" max="8" name="shoottime" placeholder="choose or enter a number of hours"> </label>
+</fieldset>
+	
+<fieldset>
+<legend>Submit and get a quote</legend>
+<input type="submit" value="Get Quote">
+<input type="reset" value="Reset">
+</fieldset>
+</form>
+
+<div id="quote"></div>
+
+</div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+</body>
+</html>

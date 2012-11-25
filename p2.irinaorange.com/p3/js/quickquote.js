@@ -10,7 +10,12 @@
 		- calculate and display results in a "quote" div
 */
 $(document).ready( function() {
-	$('#quoteForm').submit(function(e) {	 	  
+	$('input[type="reset"]').click(function() {
+		$('#quote').html("");
+	});
+
+	$('#quoteForm').submit(function(e) {	
+	e.preventDefault();	
 	$('#quoteForm').validate(
 		 { 
 			 rules: {
@@ -25,8 +30,8 @@ $(document).ready( function() {
 			} 
 		} 
 	); 
-	  e.preventDefault();
-      composeMessage();
+	  composeMessage();
+	  
 	}); // end of submit
 	}); // end of ready
 	
@@ -39,11 +44,11 @@ $(document).ready( function() {
 	var myEventName = myEvent.text();
 	var myEventType = myEvent.val();
 	var hours = $('#shoottime').val(); // Hours of shooting
-		if (hours == NaN || hours <=0 || hours > 72) {hours = 1;}
+		if (isNaN(hours) || hours <=0 || hours > 72) {hours = 1;}
 	var lowres = $('#lowres').val();
-		if (lowres == NaN || lowres <=0 || lowres > 100) {lowres = 0;}
+		if (isNaN(lowres) || lowres <=0 || lowres > 100) {lowres = 0;}
 	var hires = $('#hires').val();
-		if (hires == NaN || hires <=0 || hires > 100 ) {hires = 0;}
+		if (isNaN(hires)  || hires <=0 || hires > 100 ) {hires = 0;}
 	var baseRate =0;
 	var quickQuote=0;
 	

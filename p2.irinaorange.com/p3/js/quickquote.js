@@ -13,9 +13,7 @@ $(document).ready( function() {
 	$('input[type="reset"]').click(function() {
 		$('#quote').html("");
 	});
-
-	$('#quoteForm').submit(function(e) {	
-	e.preventDefault();	
+	
 	$('#quoteForm').validate(
 		 { 
 			 rules: {
@@ -30,8 +28,9 @@ $(document).ready( function() {
 			} 
 		} 
 	); 
+	$('#quoteForm').submit(function(e) {	
 	  composeMessage();
-	  
+	   e.preventDefault();	
 	}); // end of submit
 	}); // end of ready
 	

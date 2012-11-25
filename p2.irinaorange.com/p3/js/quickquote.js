@@ -11,7 +11,7 @@
 */
 $(document).ready( function() {
 	$('input[type="reset"]').click(function() {
-		$('#quote').html("");
+		$('#quote').html("<p>Your quote will show up here.</p>");
 	});
 	
 	$('#quoteForm').validate(

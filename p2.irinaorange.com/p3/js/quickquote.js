@@ -16,11 +16,12 @@ $(document).ready( function() {
 			 rules: {
 				custname: {required: true},
 				custphone: {phoneUS: true},
-				shoottime: {range: [1,72]}
+				shoottime: {required: true, number: true}
 			},
 			messages: {
 				custname: "Please enter your name.",
-				custphone: "Please specify a valid US phone number."
+				custphone: "Please specify a valid US phone number.",
+				shoottime: {number: "Please enter a number between 1 and 72"}
 			} 
 		} 
 	); 
@@ -38,11 +39,11 @@ $(document).ready( function() {
 	var myEventName = myEvent.text();
 	var myEventType = myEvent.val();
 	var hours = $('#shoottime').val(); // Hours of shooting
-		if (hours == undefined || hours <=0 || hours > 72) {hours = 1;}
+		if (hours == NaN || hours <=0 || hours > 72) {hours = 1;}
 	var lowres = $('#lowres').val();
-		if (lowres == undefined || lowres <=0 || lowres > 100) {lowres = 0;}
+		if (lowres == NaN || lowres <=0 || lowres > 100) {lowres = 0;}
 	var hires = $('#hires').val();
-		if (hires == undefined || hires <=0 || hires > 100 ) {hires = 0;}
+		if (hires == NaN || hires <=0 || hires > 100 ) {hires = 0;}
 	var baseRate =0;
 	var quickQuote=0;
 	

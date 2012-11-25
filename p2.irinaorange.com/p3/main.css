@@ -47,7 +47,7 @@ iframe {
 
 
 nav {
-	background-image: url("images/bottom_menu_2.gif");
+	background-image: url("http://www.idealcapture.com/images/bottom_menu_2.gif");
 	background-repeat: no-repeat;
 	clear: both;
 	font-family: Georgia, "Times New Roman", Times, serif;
@@ -292,6 +292,8 @@ label {
 	font-weight: bold;
 	margin: 15px;
 }
+
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
 
 checkbox, radio {
 	display: inline;

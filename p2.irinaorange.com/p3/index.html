@@ -6,7 +6,7 @@
 <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 <![endif]-->
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="keywords" content="photography, Boston, wedding photography, portraits, idealcapture, contact, Danilova" />
 
 <title>IDealCapture. Quick Quote.</title>
@@ -37,14 +37,12 @@
     <p>If your shoot is longer than 4 hours, it will be $100/additional hour. Bonus - 40-50 low res color-corrected images.</p></li>
   <li>
     <p>Every extra hi-res image costs $5, every extra low-res image costs $2.5.</p></li>
-  <li>
-    <p>The earlier you booked, the better. A month in advance booking gives you 5% off, two month in advance - 7% off.</p></li>
 </ul>
 
    
 
 
-<form action="js/quickquote.js" method="POST" autocomplete="on">
+<form action="js/quickquote.js" id="quoteForm" method="GET" autocomplete="on">
 <fieldset>
 <legend>Your Personal Information</legend>
 <label for="custname">Name: <br><input type="text" name="custname" id="custname" size="30" required autofocus="autofocus"></label>
@@ -55,8 +53,8 @@
 
 <fieldset>
 <legend>Type of Shooting</legend>
-<label for="eventtype">Type of event (select all that apply): <br>
-  <select name="eventtype" id="eventtype" multiple>
+<label for="eventtype">Type of shooting (choose one): <br></label>
+  <select name="eventtype" id="eventtype">
    <optgroup label="Family Portraits">
 		<option value="individual" selected>Adult Portraits</option>
 	    <option value="kids">Kids Portraits</option>
@@ -80,24 +78,42 @@
 
 	
 <fieldset>
-<legend>Length of Shooting</legend>
-<label>Shooting date: <br><input type="datetime" name="eventdate" placeholder="pick a date or enter in a MM/DD/YEAR format"></label>
-<label>Shooting length: <br><input type="number" min="1" max="8" name="shoottime" placeholder="choose or enter a number of hours"> </label>
+<legend>Length of Shooting (up to 72 hours)</legend>
+<label>Shooting length: <br><input type="number" name="shoottime" id="shoottime" min="1" max="72" required > </label>
+</fieldset>
+
+<fieldset>
+<legend>Additional Images (optional) </legend>
+<label>Extra hi-res images required (up to 100): <br><input type="number" name="hires" id="hires" min="0" max="100"> </label>
+<label>Extra low-res images required (up to 100): <br><input type="number" name="lowres" id="lowres" min="0" max="100"> </label>
 </fieldset>
 	
 <fieldset>
 <legend>Submit and get a quote</legend>
-<input type="submit" value="Get Quote">
+<input type="submit" value="Get Quote"> 
 <input type="reset" value="Reset">
 </fieldset>
 </form>
 
 <div id="quote"></div>
 
+ <nav>
+  <div id="navlinks">
+    <a href="http://www.idealcapture.com/info.html" id="infolink"/>info</a>
+    <a href="http://www.idealcapture.com/mygallery/galleries/weddings/index.html" id="weddinglink"/>wedding photography</a>
+    <a href="http://www.idealcapture.com/mygallery/galleries/portraits/index.html" id="portraitslink"/>portraits</a>
+    <a href="http://www.idealcapture.com/mygallery/galleries/nature/index.html" id="naturelink"/>nature</a>
+    <a href="http://www.idealcapture.com/mygallery/galleries/misc/index.html" id="misclink"/>misc</a>
+    <a href="http://www.idealcapture.com/contact.html" id="contactlink"/>contact</a>
+    </div>
+   </nav>
+   
 </div>
 
-<script src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/additional-methods.min.js"></script>
+<script type="text/javascript" src="js/quickquote.js"></script>
 
 </body>
 </html>

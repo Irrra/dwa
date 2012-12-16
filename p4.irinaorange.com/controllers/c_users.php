@@ -9,6 +9,8 @@ class users_controller extends base_controller {
 		echo "Welcome to your projects page!";
 	}
 	
+# This is client's side of portal. Users can open their galleries, pick pictures,
+# and send messages to admin.
 	public function projects($user_name = NULL) {
 	
 # Set up view

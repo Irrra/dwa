@@ -1,0 +1,200 @@
+/* main styles for the Photo Client Portal application */
+/* Author Irina Danilova */
+
+/***** RESET *****/
+
+body, head, footer, p, h1, h2, ul, li , a {
+	margin: 0;
+	padding: 0;
+}
+
+/***** GENERAL STYLING *****/
+head, footer, aside, article, section {
+	display: block;
+}
+
+body {
+	background-color: #FFF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 100%;
+	width:    100%;
+}
+
+/***** HEADERS *****/
+h1 {
+	color: #82634B;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style : bold;
+	font-size : 1.2em;
+	margin-bottom: 1.5em;
+}
+
+h2  {
+	color: #fff;
+	font-size: 1.1em;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+/***** CONTENT STYLING *****/
+#mainContent {
+	background-color: #FFF;
+	border: solid 1px #999;
+	margin: 20px auto; 
+	padding-top:  20px;
+	padding-bottom:20px;
+	width: 850px;	
+}
+
+img.floatLeft {
+	float: left;
+	margin-top: 0px;
+	margin-right: 25px;
+	margin-bottom: 75px;
+}
+
+article {
+	margin: 15px 15px;
+}
+
+#loginform {
+	clear: both;
+}
+
+#error {
+	color: #f00;
+	margin: 15px;
+}
+
+p {
+	color : #000;
+	font-style : normal;    
+	font-size : 1em;
+	line-height: 1.6em;
+	margin: 15px 25px;
+}
+
+/***** MENU *****/
+nav {
+	background-color: #fff;
+	padding: 5px;
+}
+
+nav a {
+	color: #fff;
+	font-size: 1.1em;
+	display: inline;
+	margin-right: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+ul li {
+	background-image: url(../images/pumpkin.png);
+	background-position: -2px center;
+	background-repeat: no-repeat;
+	list-style: none;
+	margin: 15px;
+	padding-left: 25px;
+	padding-top: 5px;
+}
+
+#shmitterians{
+	clear: both;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+
+
+#shmitterians li {
+	background-image: url(../images/pumpkin.png);
+	background-position: 0 20px;
+	background-repeat: no-repeat;
+	border: 1px dashed #BF8C33;
+	float: left;
+	line-height: 1.7em;
+	list-style: none;
+	margin: 15px 15px 15px 5px;
+	padding: 25px;
+}
+
+#shmitterians li a:link, #shmitterians li a:hover, 
+#shmitterians li a:visited, #shmitterians li a:active {
+	background-color: #592507;
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
+
+}
+
+a
+
+/***** FORMS *****/
+form {
+	margin-left: 10px;
+}
+.forminput, input[type="submit"]{
+	margin: 10px;
+}
+
+textarea {
+	height: 250px;
+	margin: 5px;
+	width: 500px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 250px;
+}
+
+input[type="text"], textarea {
+	font-size: 1em;
+}
+
+.error {
+	color: #f00;
+	margin-left: 10px;
+}
+
+/***** POSTS *****/
+.shmitter {
+	background-color: #592507;
+	border: 1px dashed #BF8C33;
+	font-family: cursive;
+	margin: 20px auto;
+	padding: 10px;
+	width: 800px;
+	
+   -moz-border-radius: 15px;
+   -o-border-radius: 15px;
+   -ms-border-radius: 15px;
+	border-radius: 15px;
+
+}
+
+#randompost .shmitter {
+	width: 400px;
+}
+
+#author {
+	color: #BF8C33;
+	font-size: 1em;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+#post {
+	color: #fff;
+	font-family: cursive;
+	font-size: 0.9em;
+	line-height: 1.2 em;
+	text-align: justify;
+}
+
+/***** Profile Page Divs *****/
+#projectslisting {
+	margin: 10px auto;
+}
+
+

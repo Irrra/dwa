@@ -12,6 +12,7 @@ class posts_controller extends base_controller {
 		
 	}
 	
+	/* Comments */
 	public function add() {
 	
 		# Setup view
@@ -20,12 +21,13 @@ class posts_controller extends base_controller {
 	
 		$client_files = Array("/css/main.css");
 		$this->template->client_files = Utils::load_client_files($client_files); 
-		$this->template->title   = "Add a new shmitt";
+		$this->template->title   = "Add a new comment";
 			
 		# Render template
 		echo $this->template;
 	}
 	
+	/* Use this function to add comments between client and admin */
 	public function p_add() {
 			
 		# Associate this post with this user
@@ -47,7 +49,7 @@ class posts_controller extends base_controller {
 		$client_files = Array("/css/main.css");
 		$this->template->client_files = Utils::load_client_files($client_files); 
 		
-		$this->template->content = "<p>Your shmitt have been added!</p>";
+		$this->template->content = "<p>Your comment have been added!</p>";
 		echo $this->template;
 	
 	}
@@ -61,7 +63,7 @@ public function index() {
 	$client_files = Array("/css/main.css");
     $this->template->client_files = Utils::load_client_files($client_files);  
 	
-	$this->template->title   = "Posts";
+	$this->template->title   = "Comments";
 
 	# Build a query of the users this user is following - we're only interested in their posts
 	$q = "SELECT * 

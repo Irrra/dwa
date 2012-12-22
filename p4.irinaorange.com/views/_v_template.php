@@ -34,7 +34,6 @@
 		<? if($user): ?>
 			
 			<a href='/users/logout'>Logout</a>
-			<a href='/posts/users/'>Projects</a>
 			
 		<? endif; ?>
 		</div>

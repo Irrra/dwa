@@ -1,5 +1,13 @@
-<h1>Hi, <?=$user->first_name?>!</h1>
-
-<div id="projectslisting">
-<p>Here is a list of your photo shoots. Follow links to get to your working area and to select pictures you would like to order.</p></div>
-</div>
+<? if(isset($project['title']) && isset($project['url'])): ?>
+<ul class="fancyList">
+<? foreach($project as $project): ?>
+	<li><em>
+		<?=$project['title']?> (Pics folder: <?=$project['url']?>)	
+	</li>	
+<? endforeach; ?>
+</ul>
+	<? else: ?>
+		<p>This customer doesn't have any projects yet. Use a form below to create some.</p>
+<? endif; ?>
+	
+<?=$subview;?>

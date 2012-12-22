@@ -1,4 +1,5 @@
-
+<div id="newclient">
+<h2>Fill fields below to add a new client.</h2>
 <form method='POST' action='/users/p_signup'>
 
 	<p class="forminput"><label>First Name: <br>
@@ -13,5 +14,6 @@
 	<p class="forminput">Password: <br>
 	<input type='password' name='password' required></label></p>
 	
-	<input type='submit' value="Sig Up"><input type='reset' value='Reset'>
+	<input type='submit' value="Add new customer"><input type='reset' value='Reset'>
 </form> 
+</div>

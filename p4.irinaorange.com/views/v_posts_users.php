@@ -1,5 +1,5 @@
 
-<div id="shmitterians">
+<div id="clients">
 <form method='POST' action='/posts/p_follow'>
 	
 <ul>	
@@ -11,7 +11,7 @@
 		
 		<!-- If there exists a connection with this user, show a unfollow link -->
 		<? if(isset($connections[$user['user_id']])): ?>
-			<a href='/posts/unfollow/<?=$user['user_id']?>'>Unshmitt</a>
+			<a href='/posts/unfollow/<?=$user['user_id']?>'>Delete Customer</a>
 		
 		<!-- Otherwise, show the follow link -->
 		<? else: ?>

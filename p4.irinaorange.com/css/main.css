@@ -24,13 +24,13 @@ body {
 h1 {
 	color: #82634B;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-style : bold;
-	font-size : 1.2em;
+	font-style: bold;
+	font-size: 1.2em;
 	margin-bottom: 1.5em;
 }
 
 h2  {
-	color: #fff;
+	color: #82634B;
 	font-size: 1.1em;
 	margin-bottom: 15px;
 	margin-left: 10px;
@@ -78,15 +78,18 @@ p {
 /***** MENU *****/
 nav {
 	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 15px;
+	margin-right: 5px;
 	padding: 5px;
+	text-align: right;
 }
 
 nav a {
 	color: #fff;
-	font-size: 1.1em;
+	font-size: 1em;
 	display: inline;
 	margin-right: 20px;
-	text-decoration: none;
 	text-transform: uppercase;
 }
 
@@ -106,8 +109,16 @@ ul li {
 	overflow: hidden;
 }
 
+a.delcust {
+	font-size: 0.8em;
+	font-style: normal;
+}
 
-#shmitterians li {
+a.custproj:link, a.custproj:hover,a.custproj:visited,a.custproj:active{
+	color: #82634B;
+}
+
+#clients li {
 	background-image: url(../images/pumpkin.png);
 	background-position: 0 20px;
 	background-repeat: no-repeat;
@@ -119,16 +130,20 @@ ul li {
 	padding: 25px;
 }
 
-#shmitterians li a:link, #shmitterians li a:hover, 
-#shmitterians li a:visited, #shmitterians li a:active {
-	background-color: #592507;
-	color: #fff;
-	padding: 5px;
+/* ========== LINKS =============*/
+      
+a:link, a:visited {
+	color: #666;
 	text-decoration: none;
-
 }
 
-a
+ a:hover {
+	border-bottom: dashed 1px #666;
+ }
+ 
+ a:active {
+	 color: #999;
+ }
 
 /***** FORMS *****/
 form {
@@ -157,26 +172,6 @@ input[type="text"], textarea {
 	margin-left: 10px;
 }
 
-/***** POSTS *****/
-.shmitter {
-	background-color: #592507;
-	border: 1px dashed #BF8C33;
-	font-family: cursive;
-	margin: 20px auto;
-	padding: 10px;
-	width: 800px;
-	
-   -moz-border-radius: 15px;
-   -o-border-radius: 15px;
-   -ms-border-radius: 15px;
-	border-radius: 15px;
-
-}
-
-#randompost .shmitter {
-	width: 400px;
-}
-
 #author {
 	color: #BF8C33;
 	font-size: 1em;
@@ -192,9 +187,26 @@ input[type="text"], textarea {
 	text-align: justify;
 }
 
-/***** Profile Page Divs *****/
+
 #projectslisting {
 	margin: 10px auto;
+}
+
+#newclient {
+	border: 2px solid #ccc;
+	clear: both;
+	margin: 15px auto;
+	width: 750px;
+}
+
+.fancyList li {
+	
+	background-image: url(../images/camera.png);
+	background-position: 0 7px;
+	background-repeat: no-repeat;
+	list-style: none;
+	margin: 5px 0 10px 200px; 
+	padding-left: 20px;
 }
 
 

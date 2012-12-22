@@ -9,33 +9,81 @@ class users_controller extends base_controller {
 		echo "Welcome to your projects page!";
 	}
 	
+	
+public function signup() {
+		
+	# Setup view
+		$this->template->content = View::instance('v_users_signup');
+		$this->template->title   = "Signup";
+			
+	# Load CSS / JS
+		$client_files = Array("/css/main.css");
+		$this->template->client_files = Utils::load_client_files($client_files); 
+			
+	# Render template
+		echo $this->template;
+		
+}
+
+	
+public function p_signup() {
+	
+	# Encrypt the password	
+	$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+		
+	# More data we want stored with the user	
+	$_POST['created']  = Time::now();
+	$_POST['modified'] = Time::now();
+	$_POST['token']    = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+		
+	# Insert this user into the database 
+	$user_id = DB::instance(DB_NAME)->insert("users", $_POST);
+	Router::redirect("/users/clients");
+}
+	
 # This is client's side of portal. Users can open their galleries, pick pictures,
 # and send messages to admin.
-	public function projects($user_name = NULL) {
+	public function projectsadmin($user_name = NULL) {
+
+	# The user can be either a regular one or an admin.
+	# So, he is redirected either to a customer zone, or to an admin zone.
+	# Setup view
+	#admin section: list of users and their projects
 	
-# Set up view
-	# If user is blank, they're not logged in, show message and don't do anything else
-	if(!$this->user) {
-		echo "Sorry, clients access only. Please, contact administrator if you lost your login information.<br> <a href='/users/login'>Login</a>";
-		
-		# Return will force this method to exit here so the rest of 
-		# the code won't be executed and the profile view won't be displayed.
-		return false;
+    if($user_name=="Admin") {
+		Router::redirect("/users/clients");
 	}
 	
-	# Setup view
-	$this->template->content = View::instance('v_users_projects');
-	$this->template->logosource = "../images/boy.gif";
-
-	# Load CSS / JS
-	$client_files = Array("/css/main.css");
-    $this->template->client_files = Utils::load_client_files($client_files);   
+	else {
+		# user section: list of user's albums
+		# retrieve the list of projects
+		
+		$q = "SELECT *  FROM projects WHERE user_id = ".$user_name;
+		
+		# if no projects created yet, create a notice
+		# else, procede with displaying
+		
+		$projectlist = DB::instance(DB_NAME)->select_rows($q);
+		# add a form for new project creation
+		
+		# Logo, styles and user name are used by both parts, admin and user's
+		$this->template->content = View::instance('v_users_projects');
+		$this->template->content->projects = $projectlist;
+		$this->template->content->subview = View::instance('v_project_setup');
+		# Logo, styles and user name are used by both parts, admin and user's
+		# Load CSS / JS
+	
+		$client_files = Array("/css/main.css");
+		$this->template->client_files = Utils::load_client_files($client_files);   
+		$this->template->logosource = "../../images/boy.gif";
+	} 
 
 	# Pass information to the view
 	$this->template->content->user_name = $user_name;
 	
 	# Render template 
-		echo $this->template;
+		echo $this->template; 
+		
 }
 
 
@@ -44,8 +92,7 @@ public function login() {
 	# Set up the view
 	$this->template->content = View::instance("v_users_login");
 	$this->template->title   = "Login to your Idealcapture projects";
-
-		
+	
 	# Pass data to the view
 	$this->template->content->error = $error;
 	
@@ -67,8 +114,14 @@ public function p_login() {
 		FROM users 
 		WHERE email = '".$_POST['email']."' 
 		AND password = '".$_POST['password']."'";
+		
+	$q2 = "SELECT first_name 
+		FROM users 
+		WHERE email = '".$_POST['email']."' 
+		AND password = '".$_POST['password']."'";
 	
 	$token = DB::instance(DB_NAME)->select_field($q);	
+	$name = DB::instance(DB_NAME)->select_field($q2);	
 	
 					
 	# If we didn't get a token back, login failed
@@ -79,7 +132,7 @@ public function p_login() {
 	# Login passed
 	else {
 		setcookie("token", $token, strtotime('+2 weeks'), '/');
-		Router::redirect("/users/projects");
+		Router::redirect("/users/projectsadmin/$name");
 	}
 }
 
@@ -103,25 +156,39 @@ public function logout() {
 
 }
 
-public function directory() {
+public function clients() {
 
 	$this->template->content = View::instance("v_users_info");
-	$this->template->title   = "List of all registered Shmitterians";
-	
-	# Load CSS / JS
-	$client_files = Array("/css/main.css");
-    $this->template->client_files = Utils::load_client_files($client_files);   
+	$this->template->title   = "Existing Idealcapture customers: <br>";
 	
 	# Build a query of the users
 	$q = "SELECT * FROM users ORDER BY last_name";
 	# Execute our query, storing the results 
 	$directory = DB::instance(DB_NAME)->select_rows($q);
-	
 	$this->template->content->users = $directory;
+	
+	# Logo, styles and user name are used by both parts, admin and user's
+    $this->template->content->subview = View::instance('v_users_signup');
+	
+	# Load CSS / JS
+	$client_files = Array("/css/main.css");
+    $this->template->client_files = Utils::load_client_files($client_files);   
+	$this->template->logosource = "../images/boy.gif";   
 	
 	# Set up the view
 	echo $this->template;
-
 }
+
+
+public function deleteCustomer($user_id) {
+	# Delete this connection
+	$where_condition = 'WHERE user_id = '.$user_id;
+	DB::instance(DB_NAME)->delete('users', $where_condition);
+	
+	echo $user_id;
+	# Send them back 
+	Router::redirect("/users/clients");
+}
+	
 		
 } # end of the class

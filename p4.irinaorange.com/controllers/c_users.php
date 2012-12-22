@@ -184,8 +184,7 @@ public function deleteCustomer($user_id) {
 	# Delete this connection
 	$where_condition = 'WHERE user_id = '.$user_id;
 	DB::instance(DB_NAME)->delete('users', $where_condition);
-	
-	echo $user_id;
+
 	# Send them back 
 	Router::redirect("/users/clients");
 }
